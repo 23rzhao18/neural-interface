@@ -317,20 +317,6 @@ header nav ul {
   position: relative;
 }
 
-.holographic::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 2px;
-  z-index: -1;
-  background: linear-gradient(45deg, #ff0080, #00ff80);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0.3;
-  animation: holographicShift 4s ease-in-out infinite reverse;
-}
-
 @keyframes holographicShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
