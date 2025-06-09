@@ -443,3 +443,161 @@ header nav ul {
 .bg-secondary {
   background: var(--secondary-gradient);
 }
+
+/* Mobile Navigation Styles - Add these to your globals.css */
+
+/* Hamburger Button Styles */
+.sci-fi-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+  }
+  
+  .hamburger-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg, var(--glow-blue), var(--glow-purple));
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+  }
+  
+  .sci-fi-hamburger:hover .hamburger-line {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+    background: linear-gradient(135deg, var(--glow-purple), var(--glow-blue));
+  }
+  
+  /* Mobile Navigation Menu */
+  .mobile-nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    border: 1px solid var(--glass-border);
+    border-top: none;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+  
+  .mobile-nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .mobile-nav-content {
+    position: relative;
+    z-index: 1001;
+  }
+  
+  /* Mobile Navigation Items */
+  .mobile-nav-item {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+    margin: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: 1px solid #8b5cf6;
+    transition: all 0.3s ease;
+    color: #ffffff;
+  }
+  
+  .mobile-nav-item:hover {
+    background: linear-gradient(135deg, #00d4ff, #b794f6);
+    border-color: #00d4ff;
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    color: #ffffff;
+  }
+  
+  .mobile-nav-item.active {
+    background: #000000;
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    color: #00d4ff;
+  }
+  
+  /* Mobile Menu Overlay */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Enhanced mobile responsiveness */
+  @media (max-width: 768px) {
+    .sci-fi-nav-link {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+    
+    .mobile-nav-menu {
+      border-radius: 0 0 16px 16px;
+    }
+    
+    .mobile-nav-item {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  /* Prevent scroll when mobile menu is open */
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+  
+  /* Animation for menu items */
+  .mobile-nav-open .mobile-nav-item {
+    animation: slideInFromRight 0.3s ease forwards;
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    .sci-fi-nav-link,
+    .mobile-nav-item {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }

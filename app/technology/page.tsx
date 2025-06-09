@@ -54,10 +54,10 @@ export default function Technology() {
             </h1>
           </div>
 
-          {/* Technology Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Technology Grid - improved mobile layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
             {technologies.map((tech, index) => (
-              <div key={index} className="glass-card p-8 group">
+              <div key={index} className="glass-card p-6 sm:p-8 group">
                 <div className="text-center mb-6">
                   <h3 className="text-glow mb-4" style={{ color: 'var(--glow-blue)' }}>
                     {tech.title}
@@ -70,47 +70,50 @@ export default function Technology() {
             ))}
           </div>
 
-          {/* Image section */}
-          <div className="glass-card p-6 mb-12 text-center">
-                <div className="inline-block">
-                  <Image 
-                    src="/images/MEA_image.jpg" 
-                    alt="Neuron Interface Project Poster" 
-                    width={600}
-                    height={600}
-                    className="rounded-lg border-glow"
-                    style={{borderColor: 'var(--glow-blue)'}}
-                    priority
-                  />
-                </div>
-              </div>
+          {/* Responsive Image section */}
+          <div className="glass-card p-4 sm:p-6 mb-12 text-center">
+            <div className="relative w-full max-w-2xl mx-auto">
+              <Image 
+                src="/images/MEA_image.jpg" 
+                alt="Microelectrode Array Technology" 
+                width={600}
+                height={600}
+                className="w-full h-auto rounded-lg object-contain"
+                style={{
+                  maxHeight: '70vh'
+                }}
+                sizes="(max-width: 640px) 95vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 600px"
+                priority
+              />
+            </div>
+          </div>
 
-          {/* Technical Specifications */}
-          <div className="glass-card p-8 mb-16">
+          {/* Technical Specifications - improved mobile layout */}
+          <div className="glass-card p-6 sm:p-8 mb-16">
             <h2 className="text-center mb-8 text-glow" style={{ color: 'var(--glow-purple)' }}>
               Technical Specifications
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
+                <div className="text-xl sm:text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
                   Available Channels
                 </div>
                 <div className="text-sm opacity-80">Don't remember, replace with correct number - maybe 8?</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
+                <div className="text-xl sm:text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
                   Temporal Resolution
                 </div>
                 <div className="text-sm opacity-80">Also don't remember - how fast can we sample ADC/update DAC?</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
+                <div className="text-xl sm:text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
                   Hardware Reference Manual
                 </div>
                 <div className="text-sm opacity-80">Once we're done building, need to create documentation and put it here</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
+                <div className="text-xl sm:text-2xl font-bold text-glow mb-2" style={{ color: 'var(--glow-blue)' }}>
                   Setup Guide
                 </div>
                 <div className="text-sm opacity-80">More documentation</div>

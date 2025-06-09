@@ -41,7 +41,7 @@ export default function About() {
               <div className="text-center mb-8">
                 <h2 className="text-glow mb-6">Neuron Interface Project</h2>
                 <p className="text-xl leading-relaxed mb-6">
-                  NIP develops <span className="holographic" data-text="cost-effective">cost-effective</span> and 
+                  NIP develops <span className="text-glow" style={{color: 'var(--glow-blue)'}}>cost-effective</span> and 
                   <span className="text-glow" style={{color: 'var(--glow-green)'}}> novel devices</span> for 
                   in vitro neural stimulation and recording.
                 </p>
@@ -52,23 +52,26 @@ export default function About() {
               </div>
             </div>
 
-            {/* Image section */}
-            <div className="glass-card p-6 mb-12 text-center">
-              <div className="inline-block">
+            {/* Responsive Image section */}
+            <div className="glass-card p-4 sm:p-6 mb-12 text-center">
+              <div className="relative w-full max-w-2xl mx-auto">
                 <Image 
                   src="/images/NIP_Posterfinal.jpg" 
                   alt="Neuron Interface Project Poster" 
                   width={600}
                   height={1000}
-                  className="rounded-lg border-glow"
-                  style={{borderColor: 'var(--glow-blue)'}}
+                  className="w-full h-auto rounded-lg object-contain"
+                  style={{
+                    maxHeight: '80vh'
+                  }}
+                  sizes="(max-width: 640px) 95vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 600px"
                   priority
                 />
               </div>
             </div>
 
-            {/* Feature cards grid */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Feature cards grid - improved mobile layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
               <div className="glass-card p-6 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary border-glow rounded-lg"></div>
                 <h3 className="mb-4">Neural Innovation</h3>
@@ -85,7 +88,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="glass-card p-6 text-center">
+              <div className="glass-card p-6 text-center sm:col-span-2 lg:col-span-1">
                 <div className="w-16 h-16 mx-auto mb-4 bg-secondary border-glow rounded-lg"></div>
                 <h3 className="mb-4">Intuitive Software</h3>
                 <p className="text-sm">
@@ -95,13 +98,13 @@ export default function About() {
             </div>
 
             {/* Mission statement */}
-            <div className="glass-card text-center">
-              <h2 className="h1" style={{color: 'var(--glow-purple)'}}>Our Mission</h2>
-              <p className="text-lg leading-relaxed mb-6">
+            <div className="glass-card text-center p-6 sm:p-8">
+              <h2 className="h1 mb-6" style={{color: 'var(--glow-purple)'}}>Our Mission</h2>
+              <p className="text-base sm:text-lg leading-relaxed mb-6">
                 To democratize neuroscience research by providing accessible, high-quality neural interface technologies 
                 that accelerate scientific discovery and medical breakthroughs.
               </p>
-              <button className="sci-fi-button">
+              <button className="sci-fi-button w-full sm:w-auto">
                 Learn More About Our Technology
               </button>
             </div>

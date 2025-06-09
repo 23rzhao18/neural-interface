@@ -46,7 +46,7 @@ export default function Home() {
               <button className="sci-fi-button" style={{borderColor: 'var(--glow-purple)'}}>
                 View Research
               </button>
-              <button className="sci-fi-button" style={{borderColor: 'var(--glow-green)'}}>
+              <button className="sci-fi-button" style={{borderColor: 'var(--glow-blue)'}}>
                 Request a Quote
               </button>
             </div>
